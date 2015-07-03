@@ -1,8 +1,8 @@
-***********************************************************
+===========================================================
 
  KaTCH -- Karlsruhe Time-Dependent Contraction Hierarchies
 
-***********************************************************
+===========================================================
 
 
 
@@ -25,6 +25,11 @@ has been widely reengineered and rewritten to provide more clear,
 more understandable, and more maintainable source code than the
 code developed during our research. The original TCH source code
 is quite experimental and not so easy to understand.
+
+KaTCH is released by Karlsruher Institut fuer Technologie (KIT)
+under the terms of GNU AGPL version 3 (see files 'LICENSE' and
+'COPYING'). If you need a commercial license, please contact Prof.
+Peter Sanders <sanders@kit.edu> of KIT by writing an email.
 
 
 
