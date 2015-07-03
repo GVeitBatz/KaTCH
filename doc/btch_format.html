@@ -1,0 +1,87 @@
+<!--
+ katch/doc/btch_format.h
+
+
+ This file is part of
+
+ KaTCH -- Karlsruhe Time-Dependent Contraction Hierarchies
+
+ Copyright (C) 2015
+
+ Institut fuer Theroretische Informatik,
+ Karlsruher Institut fuer Technology (KIT),
+ 76131 Karlsruhe, Germany
+
+ Author: Gernot Veit Batz
+
+
+
+ KaTCH is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Affero General Public License as published
+ by the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+
+ KaTCH is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+ License for more details.
+
+ You should have received a copy of the GNU Affero General Public
+ License along with Contraction Hierarchies; see the file COPYING;
+ if not, see <http://www.gnu.org/licenses/>.
+ 
+-->
+<html>
+<head>
+<title>BTCH File Format</title>
+</head>
+<body>
+<h2>BTCH File Format</h2>
+<p>A binary file format for storing a time-dependent contraction hierarchy (TCH) used by KaTCH
+(&quot;<u>Ka</u>rlsruhe <u>T</u>ime-dependent <u>C</u>ontraction <u>H</u>ierarchies&quot;)</p>
+<p>Author: G. Veit Batz, <a href="mailto:batz@kit.edu">batz@kit.edu</a>, Karlsruhe Institute of Technology (KIT), April 2015<hr>
+usual file suffix: <b>.btch</b></p>
+<b>File Format:</b>
+<ul>
+	<li>a <i>binary</i> file<li>layout:
+	<ul>
+		<li>6 x uint8_t: &quot;<code>BTCH\r\n</code>&quot; (<code>0x42 0x54 0x43 0x48 0x0d 0x0a</code>)
+		<li>uint32_t: version (currently &quot;<code>1</code>&quot, shold be <code>==</code> compared)
+		<li>uint32_t: number of nodes (= n)
+		<li>uint32_t: number of edges (= m)
+		<li>uint32_t: period of the functions
+		<li>n times, for each node 0..(n-1):
+			<ul>
+				<li>uint32_t: level<br/>level must be one of 0..n, where n is a special value
+				meaning that the node has not been contracted (needed for imcomplete TCHs)
+			</ul>
+        <li>uint32_t: <code>0x00772255</code> as separator 
+		<li>m times, edges:
+		<ul>
+			<li>uint32_t: id of source node
+			<li>uint32_t: id of target node
+			<li>shortcut descriptor:<ul>
+				<li>uint32_t: number s of intervals where the shortcut represents different edge pairs; s=0 means
+				    that edge is not a shortcut but an original edge
+				<li>s times, for each interval [x_1, x2), [x_2, x_3),..., [x_s, x_s + period)
+				<ul>
+					<li>double: left boundary of the current interval
+					<li>uint32_t: id of the node in the middle
+					<li><b>Note:</b> If an interval represents no shortcut (this happens when a non-shortcut
+						edge is merged with a shortcut edge), then the middle node is the maximum value of uint32_t.
+				</ul>
+        </ul>
+        <li>travel time function:
+        <ul>
+            <li>uint32_t: number k of points
+			<li>k times, points represented as pair (x,y):
+			<ul>
+				<li>double: x
+				<li>double: y
+			</ul>
+		</ul>
+	</ul>
+	<li>uint32_t: <code>0xaabbccdd</code> as terminator
+</ul>
+</body>
+</html>
