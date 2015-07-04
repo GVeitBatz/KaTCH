@@ -40,7 +40,6 @@
 #include "io/btch_format.h"
 #include "io/demands_format.h"
 #include "io/edge_info.h"
-#include "io/tch_format.h"
 #include "query/tch_ea_query.h"
 
 int main(int argc, char** argv)
