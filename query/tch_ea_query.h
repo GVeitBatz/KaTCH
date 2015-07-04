@@ -595,12 +595,12 @@ public:
     {
         _t_arr = std::numeric_limits<double>::max();
 
-        if ( start == destination )
-            return _t_dep;
-
         _start = start;
         _destination = destination;
         _t_dep = t_dep;
+
+        if ( start == destination )
+            return _t_dep;
 
         _upper_bound = std::numeric_limits<double>::max();
         _candidates.clear();
