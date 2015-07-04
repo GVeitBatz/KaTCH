@@ -38,7 +38,6 @@
 
 #include "io/edge_info.h"
 #include "io/tpgr_format.h"
-#include "io/ddsg_format.h"
 #include "prepro/ordering.h"
 #include "util/misc.h"
 
