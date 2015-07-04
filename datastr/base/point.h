@@ -127,10 +127,6 @@ inline bool intersect(const Point& a, const Point& b, const Point& p, const Poin
 
 inline Point intersection_point(const Point& a, const Point& b, const Point& p, const Point& q) noexcept
 {
-if ( ! (perp_dot_product(p - q, b - a) != 0) )
-{
-    std::cout << std::endl << "a = " << a << ", b = " << b << ", p = " << p << ", q = " << q << std::endl;
-}
     assert( perp_dot_product(p - q, b - a) != 0 );
     return a + (perp_dot_product(p - q, p - a) / perp_dot_product(p - q, b - a)) * (b - a);
 }
