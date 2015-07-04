@@ -630,8 +630,8 @@ public:
         if ( g_ptr->is_const() )
             return link(g_ptr->get_const_value(), f_ptr);
 
-        const PwlTTF& f( *f_ptr );
-        const PwlTTF& g( *g_ptr );
+        const PwlTTF& f = *f_ptr;
+        const PwlTTF& g = *g_ptr;
 
         std::vector<Point> result_points;
         result_points.reserve(f.size() + g.size() + 10);
