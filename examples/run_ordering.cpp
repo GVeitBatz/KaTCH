@@ -75,11 +75,7 @@ int main(int argc, char** argv)
     KATCH_STATUS("Graph has " << graph.get_n_nodes() << " nodes, " << graph.get_n_edges() << " edges.\n");
 
     katch::Ordering ordering(std::move(graph), tch_output_file_name);
-
-    auto t1 = katch::util::time_stamp();
     ordering.order_and_construct(n_threads);
-    auto t2 = katch::util::time_stamp();
-
     KATCH_STATUS("Done.\n");
 
     return EXIT_SUCCESS;
