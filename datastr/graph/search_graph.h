@@ -344,8 +344,6 @@ public:
 
     bool is_directed_upward(const EdgeIterator e) const noexcept
     {
-if ( ! (e < _edges.size()) )
-    std::cout << "e = " << e << ", _edges.size() = " << _edges.size() << std::endl;
         assert( e < _edges.size() );
         return _edges[e]._upward;
     }
