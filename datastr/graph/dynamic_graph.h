@@ -455,8 +455,10 @@ public:
                 )
             );
 
-            assert( _nodes[u]._out_edges_begin == INVALID_FW_EDGE_ITERATOR || _nodes[u]._out_edges_begin < _forward_edges.size() );
-            assert( _nodes[u]._out_edges_end == INVALID_FW_EDGE_ITERATOR || _nodes[u]._out_edges_end < _forward_edges.size() );
+            assert( _nodes[u]._out_edges_begin == INVALID_FW_EDGE_ITERATOR ||
+                                _nodes[u]._out_edges_begin <= _forward_edges.size() );
+            assert( _nodes[u]._out_edges_end == INVALID_FW_EDGE_ITERATOR ||
+                                _nodes[u]._out_edges_end <= _forward_edges.size() );
 
             for ( FwEdgeIterator e = _nodes[u]._out_edges_begin ; e != _nodes[u]._out_edges_end ; ++e )
             {
