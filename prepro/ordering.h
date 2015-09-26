@@ -684,15 +684,6 @@ private:
     // local data of the parallel threads
     mutable std::vector<LocalThreadData> _local_thread_data;
 
-    // the value added to sample search score when a shortcut is added
-    const int SAMPLE_SEARCH_LAMBDA_PLUS = 4;
-
-    // the value subtracted from sample search score when a shortcut is omitted
-    const int SAMPLE_SEARCH_LAMBDA_MINUS = 1;
-
-    // the threshold for turning sample search mode on (if score exceeds XI) and off (if score gets smaller than -XI)
-    const int SAMPLE_SEARCH_XI = 1000;
-
 
 public:
 
