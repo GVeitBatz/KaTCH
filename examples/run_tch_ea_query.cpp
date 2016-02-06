@@ -97,7 +97,7 @@ int main(int argc, char** argv)
         max_abs_error = std::max(max_abs_error, abs_error);
         total_abs_error += abs_error;
 
-        const double rel_error = abs_error / demand._t_arr;
+        const double rel_error = abs_error / fabs(demand._t_arr - demand._t_dep);
         max_rel_error = std::max(max_rel_error, rel_error);
         total_rel_error += rel_error;
 
