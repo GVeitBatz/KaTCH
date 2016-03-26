@@ -10,14 +10,18 @@ Introduction
 ============
 
 KaTCH is an implementation of time-dependent contraction hierarchies
-(TCHs) mainly following the description by Batz et al. [1] but with
-some modifications. The implementation covers the ordering stage of
-the preprocessing and the TCH-based EA querying. Contraction for
-pre-existing node orders as well as other queries like ATCH-based
-EA querying and all kinds of profile queries are not yet included
-in KaTCH. Note that the Ordering not only computes a node order but
-outputs a fully functioning TCH structure. The TCH is written to
-file on-the-fly during the ordering process.
+(TCHs), an algorithmic framework for fast and exact route planning
+in road networks that optimizes the travel time depending on the
+point in time when the journey starts.
+
+The implementation mainly follows the description by Batz et al. [1]
+but with some modifications. It covers the ordering stage of the
+preprocessing and the TCH-based EA querying. Construction of
+hierarchies for pre-existing node orders as well as other queries
+like ATCH-based EA querying and all kinds of profile queries are not
+yet included in KaTCH. Note that the Ordering not only computes a
+node order but outputs a fully functioning TCH structure. The TCH is
+written to file on-the-fly during the ordering process.
 
 It must be noted that KaTCH is NOT the implementation of TCHs that
 is used in the experiments reported by Batz et al. [1]. Instead it
