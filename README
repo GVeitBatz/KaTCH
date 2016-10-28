@@ -122,6 +122,10 @@ linear functions and that the current period is hard-coded to be
 second). Using a different unit of time or different period length,
 requires changes to the source code.
 
+Please be aware that KaTCH will simply compute the WRONG RESULT if
+the unit of time is different from 0.1 sec and/or if the period
+interval is different from 24 hours.
+
 
 
 Assertions
