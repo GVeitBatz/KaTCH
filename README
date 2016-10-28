@@ -113,6 +113,17 @@ in Section 5.4 of this article. The modifications are as follows:
 
 
 
+Travel Time Functions (TTFs)
+============================
+Note that the current unit of time used by KaTCH is hard-coded to be
+the tenth of a second. Also note that TTFs are PERIODIC piecewise
+linear functions and that the current period is hard-coded to be
+864000 (i.e., 24 hours since the unit of time is the tenth of a
+second). Using a different unit of time or different period length,
+requires changes to the source code.
+
+
+
 Assertions
 ==========
 
