@@ -27,7 +27,7 @@
  * License for more details.
  *
  * You should have received a copy of the GNU Affero General Public
- * License along with Contraction Hierarchies; see the file COPYING;
+ * License along with KaTCH; see the file COPYING; if not, see
  * if not, see <http://www.gnu.org/licenses/>.
  *
  */
@@ -89,6 +89,13 @@ std::vector<EdgeInfo> read_edges(const std::string& input_file_name)
 
     unsigned int period;
     input_tpgr_file >> period;
+
+    if ( period != 864000 )
+    {
+        KATCH_CONTINUE_STATUS(" ABORT\n");
+        KATCH_ERROR("Period of time functions is " << period << " (expected 864000).\n");
+        return result;
+    }
 
     unsigned int edge_counter = 0;
     while ( ! input_tpgr_file.eof() && edge_counter < n_edges )
