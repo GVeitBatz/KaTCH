@@ -300,7 +300,7 @@ std::vector<EdgeInfo> read_edges(const std::string& input_file_name, double epsi
     uint32_t n_edges = read_uint32(input_btch_file);
     double period = read_uint32(input_btch_file);
 
-    if ( period != 864000 )
+    if ( period != 864000.0 )
     {
         KATCH_CONTINUE_STATUS(" ABORT\n");
         KATCH_ERROR("file has wrong period of TTFs (expected 864000).\n");
