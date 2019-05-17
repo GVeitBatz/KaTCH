@@ -42,6 +42,7 @@
 #include <functional>
 #include <limits>
 #include <vector>
+#include <cmath>
 
 #include "datastr/graph/basic.h"
 

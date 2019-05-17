@@ -299,7 +299,7 @@ public:
 
     std::pair<double,double> get_min_max() const noexcept
     {
-        if ( _is_constant ) return _constant_value;
+        if ( _is_constant ) return std::make_pair(_constant_value, _constant_value);
 
         assert( _ttf_impl_ptr );
         return std::make_pair(_ttf_impl_ptr->get_min(), _ttf_impl_ptr->get_max());
