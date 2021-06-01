@@ -474,7 +474,7 @@ private:
             {
                 SearchNode& u = _context.pq_delete_min(BACKWARD);
 
-                if ( _upper_bound != std::numeric_limits<double>::max() && u._interval.get_lower() > _upper_bound + 0.001 )
+                if ( _upper_bound != std::numeric_limits<double>::max() && u._interval.get_lower() > _upper_bound - _t_dep + 0.001 )
                 {
                     finished[BACKWARD] = true;
                     continue;
