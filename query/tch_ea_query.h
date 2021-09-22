@@ -43,6 +43,7 @@
 #include <stack>
 #include <tuple>
 #include <vector>
+#include <bitset>
 
 #include <boost/heap/pairing_heap.hpp>
 
